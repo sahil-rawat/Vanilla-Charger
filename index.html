@@ -60,12 +60,21 @@
         </div>
     </div>
 
+    <h1>Static Component</h1>
     <div class="static-component" id="greeting">
         <h1>This is a Component</h1>
     </div>
 
     <div class="static-component"></div>
     <div class="static-component"></div>
+
+    <h1>Functional Component</h1>
+    <div id="functional-component">
+        <h1>Hello ${props.username}, this is a ${props.component} component.</h1>
+    </div>
+
+    <div id="inject-functional-component"></div>
+    <div id="inject-another-functional-component"></div>
 
     <script defer type="module" src="./main.js"></script>
 </body>

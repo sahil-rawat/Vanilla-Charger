@@ -1,15 +1,15 @@
 // Start building your app from here..
-import { hook, statefulHook, inject, conditionalHook, store, conditionalStore, loopHook, asyncStore, asyncHook, reactiveFunction, staticComponent } from './Vanilla-Charger.js';
+import { hook, statefulHook, inject, conditionalHook, store, conditionalStore, loopHook, asyncStore, asyncHook, reactiveFunction, staticComponent, functionalComponent } from './Vanilla-Charger.js';
 
 export const firstname = "Express";
 export const lastname = "Gradient";
 const heading = hook("h1");
 const paragraph = hook("p");
 
-const component = hook(".component");
+const divComponent = hook(".component");
 const renderDiv = hook("#render-div");
 
-inject(component, renderDiv);
+inject(divComponent, renderDiv);
 
 export let count = store(0);
 const counter = statefulHook("#counter", count);
@@ -50,3 +50,10 @@ const changeLogger = () => console.log('Hello World');
 reactiveFunction(changeLogger);
 
 staticComponent('#greeting');
+
+let username = "discoding";
+let component = "functional";
+functionalComponent('#functional-component', '#inject-functional-component', { username, component });
+
+username = "Elliot";
+functionalComponent('#functional-component', '#inject-another-functional-component', { username, component });

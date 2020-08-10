@@ -131,7 +131,9 @@ export const asyncStore = (asyncData) => {
 
 export const asyncHook = (element, asyncStore, placeHolder, asyncItem) => {
     const asyncElement = document.querySelector(element);
+
     const placeHolderDOM = document.querySelector(placeHolder);
+
     const asyncItemDOM = document.querySelector(asyncItem);
     asyncElement.placeHolder = placeHolderDOM.innerHTML;
     asyncElement.asyncItem = asyncItemDOM.innerHTML;
@@ -155,8 +157,16 @@ export const reactiveHook = () => {
 export const staticComponent = (id) => {
     const domElement = document.querySelector(id);
     let components = document.getElementsByClassName(domElement.className);
-    components = [...components];
 
+    components = [...components];
     components.forEach(component => component.innerHTML = eval('`' + domElement.innerHTML + '`'));
+}
+
+export const functionalComponent = (fromId, toId, props={}) => {
+    const toElement = document.querySelector(toId);
+    const fromElement = document.querySelector(fromId);
+
+    toElement.innerHTML = eval('`' + fromElement.innerHTML + '`');
+    fromElement.style.display = 'none';
 }
 // Vanilla-Charger ends here..
