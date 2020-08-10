@@ -1,8 +1,5 @@
 // Start building your app from here..
-import { hook, statefulHook, inject, conditionalHook, store, conditionalStore, loopHook, asyncStore, asyncHook, reactiveFunction } from './Vanilla-Charger.js';
-
-const changeLogger = () => console.log('Hello World');
-reactiveFunction(changeLogger);
+import { hook, statefulHook, inject, conditionalHook, store, conditionalStore, loopHook, asyncStore, asyncHook, reactiveFunction, staticComponent } from './Vanilla-Charger.js';
 
 export const firstname = "Express";
 export const lastname = "Gradient";
@@ -48,3 +45,8 @@ setTimeout(() => {
     asyncData.value = "This data comes late";
 }, 2000);
 let asyncBlock = asyncHook('.async-block', asyncData, '.placeHolder', '.async-item');
+
+const changeLogger = () => console.log('Hello World');
+reactiveFunction(changeLogger);
+
+staticComponent('#greeting');

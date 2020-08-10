@@ -151,4 +151,12 @@ export const reactiveFunction = (fn) => reactiveFunctions.push(fn);
 export const reactiveHook = () => {
     reactiveFunctions.forEach(fn => fn());
 }
+
+export const staticComponent = (id) => {
+    const domElement = document.querySelector(id);
+    let components = document.getElementsByClassName(domElement.className);
+    components = [...components];
+
+    components.forEach(component => component.innerHTML = eval('`' + domElement.innerHTML + '`'));
+}
 // Vanilla-Charger ends here..
